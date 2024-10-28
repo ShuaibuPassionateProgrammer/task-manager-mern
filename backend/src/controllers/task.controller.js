@@ -5,8 +5,8 @@ const createTask = async (req, res) => {
         const { title, description } = req.body;
 
         const task = new Task({
-            title: title,
-            description: description
+            title,
+            description
         });
     }
     catch (error) {

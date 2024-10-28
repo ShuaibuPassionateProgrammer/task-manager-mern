@@ -47,7 +47,7 @@ const updateTask = async (req, res) => {
     }
 };
 
-const deleteTask = async () => {};
+const deleteTask = async (req, res) => {};
 
 export {
     createTask,

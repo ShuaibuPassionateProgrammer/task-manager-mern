@@ -3,13 +3,13 @@ import mongoose from "mongoose";
 const taskSchema = new Schema({
     title: {
         type: String,
-        required: true,
+        required: true
     },
     description: {
         type: String,
-        required: true,
+        required: true
     },
-}, { timestamps: true, });
+}, { timestamps: true });
 
 const Task = mongoose.models.task || mongoose.model("Task", taskSchema);
 export default Task;

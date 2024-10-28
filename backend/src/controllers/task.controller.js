@@ -29,8 +29,10 @@ const allTask = async (req, res) => {
     }
 };
 
-const updateTask = async () => {
-    try {}
+const updateTask = async (req, res) => {
+    try {
+        const taks = await Task.findByIdAndUpdate();
+    }
     catch (error) {
         res.status(500).json({ error: error?.message });
     }

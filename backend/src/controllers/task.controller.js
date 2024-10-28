@@ -19,7 +19,9 @@ const createTask = async (req, res) => {
 };
 
 const allTask = async (req, res) => {
-    try {}
+    try {
+        const tasks = await Task.find();
+    }
     catch (error) {
         res.status(500).json({ error: error?.message });
         console.error("Internal server error: " + error?.message);

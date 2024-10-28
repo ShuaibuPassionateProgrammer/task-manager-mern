@@ -9,6 +9,10 @@ const taskSchema = new Schema({
         type: String,
         required: true,
     },
+    createdAt: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
 const Task = mongoose.models.task || mongoose.model("Task", taskSchema);

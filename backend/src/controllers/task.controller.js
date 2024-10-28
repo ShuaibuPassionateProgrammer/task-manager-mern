@@ -18,7 +18,7 @@ const createTask = async (req, res) => {
     }
 };
 
-const allTask = async () => {};
+const allTask = async (req, res) => {};
 
 const updateTask = async () => {};
 

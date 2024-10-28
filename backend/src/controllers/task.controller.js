@@ -1,6 +1,12 @@
 import Task from "../models/task.model.js";
 
-const createTask = async () => {};
+const createTask = async (req, res) => {
+    try {}
+    catch (error) {
+        res.status(500).json({ error: error?.message });
+        
+    }
+};
 
 const allTask = async () => {};
 

@@ -3,6 +3,11 @@ import Task from "../models/task.model.js";
 const createTask = async (req, res) => {
     try {
         const { title, description } = req.body;
+
+        const task = new Task({
+            title: title,
+            description: description
+        });
     }
     catch (error) {
         res.status(500).json({ error: error?.message });

@@ -4,7 +4,7 @@ const createTask = async (req, res) => {
     try {}
     catch (error) {
         res.status(500).json({ error: error?.message });
-        
+        console.error("Internal server error: " + error?.message);
     }
 };
 

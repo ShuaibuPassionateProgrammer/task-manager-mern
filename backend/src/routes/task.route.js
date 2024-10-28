@@ -5,5 +5,6 @@ const router = express.Router();
 
 router.post("/", createTask);
 router.get("/", getTask);
+router.put("/", updateTask);
 
 export default router;

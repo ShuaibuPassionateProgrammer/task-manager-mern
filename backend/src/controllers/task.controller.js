@@ -29,7 +29,12 @@ const allTask = async (req, res) => {
     }
 };
 
-const updateTask = async () => {};
+const updateTask = async () => {
+    try {}
+    catch (error) {
+        res.status(500).json({ error: error?.message });
+    }
+};
 
 const deleteTask = async () => {};
 

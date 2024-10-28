@@ -1,0 +1,6 @@
+import mongoose from "mongoose";
+
+const taskSchema = new Schema({});
+
+const Task = mongoose.models.task || mongoose.model("Task", taskSchema);
+export default Task;

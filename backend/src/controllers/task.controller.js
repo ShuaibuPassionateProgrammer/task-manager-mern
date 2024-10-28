@@ -35,7 +35,8 @@ const updateTask = async (req, res) => {
 
         const taks = await Task.findByIdAndUpdate(
             req.params.id,
-            {  }
+            { title, description },
+            { new: true }
         );
     }
     catch (error) {

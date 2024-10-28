@@ -1,7 +1,9 @@
 import Task from "../models/task.model.js";
 
 const createTask = async (req, res) => {
-    try {}
+    try {
+        const { title, description } = req.body;
+    }
     catch (error) {
         res.status(500).json({ error: error?.message });
         console.error("Internal server error: " + error?.message);

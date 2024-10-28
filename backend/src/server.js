@@ -16,4 +16,7 @@ app.get("/", (req, res) => {
     res.send("Server started...");
 });
 
-app.listen(port, () => console.log(`Server is up running on port:${port}`));
+app.listen(port, () => {
+    connectDB();
+    console.log(`Server is up running on port:${port}`)
+});

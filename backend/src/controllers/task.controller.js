@@ -4,12 +4,12 @@ const createTask = async (req, res) => {
     try {
         const { title, description } = req.body;
 
-        const task = new Task({
+        const newTask = new Task({
             title,
             description
         });
 
-        await task.save();
+        await newTask.save();
     }
     catch (error) {
         res.status(500).json({ error: error?.message });

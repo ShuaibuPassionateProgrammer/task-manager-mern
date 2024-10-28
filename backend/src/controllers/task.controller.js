@@ -33,11 +33,13 @@ const updateTask = async (req, res) => {
     try {
         const { title, description } = req.body;
 
-        const taks = await Task.findByIdAndUpdate(
+        const updatedTask = await Task.findByIdAndUpdate(
             req.params.id,
             { title, description },
             { new: true }
         );
+
+        res.json(updatedTask);
     }
     catch (error) {
         res.status(500).json({ error: error?.message });

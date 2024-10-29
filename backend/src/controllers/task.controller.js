@@ -21,7 +21,7 @@ const createTask = async (req, res) => {
 const allTask = async (req, res) => {
     try {
         const tasks = await Task.find();
-        res.json(tasks);
+        res.status(200).json(tasks);
     }
     catch (error) {
         res.status(500).json({ error: error?.message });
@@ -39,7 +39,7 @@ const updateTask = async (req, res) => {
             { new: true }
         );
 
-        res.json(updatedTask);
+        res.status(200).json(updatedTask);
     }
     catch (error) {
         res.status(500).json({ error: error?.message });
@@ -50,7 +50,7 @@ const updateTask = async (req, res) => {
 const deleteTask = async (req, res) => {
     try {
         await Task.findByIdAndDelete(req.params.id);
-        res.json({ message: "Task deleted" });
+        res.status(200).json({ message: "Task deleted" });
     }
     catch (error) {
         res.status(500).json({ error: error?.message });

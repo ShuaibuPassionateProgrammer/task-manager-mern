@@ -25,6 +25,7 @@ const TaskForm = () => {
                 <textarea 
                     type="text"
                     placeholder="Task Description"
+                    value={description}
                     onChange={e => setDescription(e.target.value)}
                     className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                     rows="3"

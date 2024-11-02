@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createTask } from "../api.js";
 
-const TaskForm = () => {
+const TaskForm = ({ onTaskSubmitted }) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 

@@ -7,6 +7,14 @@ const TaskForm = ({ onTaskSubmitted }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        // Prepare the new task data
+        const newTask = { title, description };
+
+        try {}
+        catch (error) {
+            console.error("Error adding task: " + error?.message);
+        }
     };
 
     return (

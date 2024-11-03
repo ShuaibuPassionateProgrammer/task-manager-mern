@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createTask } from "../api.js";
 
-const TaskForm = ({ onTaskSubmitted }) => {
+const TaskForm = ({ onTaskAdded }) => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
 
@@ -11,7 +11,13 @@ const TaskForm = ({ onTaskSubmitted }) => {
         // Prepare the new task data
         const newTask = { title, description };
 
-        try {}
+        try {
+            // create the new task via the API
+            const savedTask = await createTask(newTask);
+
+            // call the parent function to update the task list (optional if you're using reload)
+            onTaskAdded(savedTask);
+        }
         catch (error) {
             console.error("Error adding task: " + error?.message);
         }

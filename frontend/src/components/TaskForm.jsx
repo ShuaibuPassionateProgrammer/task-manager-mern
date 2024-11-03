@@ -17,6 +17,13 @@ const TaskForm = ({ onTaskAdded }) => {
 
             // call the parent function to update the task list (optional if you're using reload)
             onTaskAdded(savedTask);
+
+            // Clear the form inputs
+            setTitle("");
+            setDescription("");
+
+            // Forecefully reload the page to fetch updated task
+            window.location.reload();
         }
         catch (error) {
             console.error("Error adding task: " + error?.message);

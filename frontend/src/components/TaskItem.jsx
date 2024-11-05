@@ -8,7 +8,15 @@ const TaskItem = ({ task }) => {
 
     return (
         <div className="bg-white shadow-md rounded-lg p-5 hover:shadow-lg transition-shadow duration-300">
-            {isEditing ? "" : ""}
+            {isEditing ? (
+                <div>
+                    <input 
+                        type="text"
+                        value={editTitle}
+                        onChange={e => setEditTitle(e.target.value)}
+                    />
+                </div>
+            ) : ""}
         </div>
     );
 };

@@ -14,6 +14,7 @@ const TaskItem = ({ task }) => {
                         type="text"
                         value={editTitle}
                         onChange={e => setEditTitle(e.target.value)}
+                        className="w-full p-2 border border-gray-300 rounded mb-2"
                     />
                 </div>
             ) : ""}

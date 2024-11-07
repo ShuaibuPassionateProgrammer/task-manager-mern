@@ -22,6 +22,18 @@ const TaskItem = ({ task }) => {
                         className="w-full p-2 border border-gray-300 rounded mb-2"
                         rows="3"
                     ></textarea>
+                    <button
+                        onClick={handleSave}
+                        className="bg-green-500 text-white py-1 px-3 rounded mr-2 hover:bg-green-600"
+                    >
+                        Save
+                    </button>
+                    <button
+                        onClick={() => setIsEditing(false)}
+                        className="bg-gray-300 text-gray-800 py-1 px-3 rounded hover:bg-gray-400"
+                    >
+                        Cancel
+                    </button>
                 </div>
             ) : ""}
         </div>

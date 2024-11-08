@@ -35,7 +35,26 @@ const TaskItem = ({ task }) => {
                         Cancel
                     </button>
                 </div>
-            ) : ""}
+            ) : (
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-800">{task.title}</h3>
+                  <p className="text-gray-600">{task.description}</p>
+                  <div className="mt-4 flex space-x-2">
+                    <button
+                      onClick={handleEdit}
+                      className="bg-blue-500 text-white py-1 px-3 rounded-lg hover:bg-blue-600"
+                    >
+                      Edit
+                    </button>
+                    <button
+                      onClick={handleDelete}
+                      className="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+            )}
         </div>
     );
 };

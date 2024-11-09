@@ -23,6 +23,21 @@ const TaskItem = ({ task }) => {
         setIsEditing(true); // Switch to editing mode
     };
 
+    const handleSave = async () => {
+        try {
+            const updatedTask = {
+                ...task,
+                title: editTitle,
+                description: editDescription
+            };
+
+            await updateTask(task._id, updatedTask); // Update task via API
+        }
+        catch (error) {
+            console.error("Error updating task: " + error?.message);
+        }
+    };
+
     return (
         <div className="bg-white shadow-md rounded-lg p-5 hover:shadow-lg transition-shadow duration-300">
             {isEditing ? (

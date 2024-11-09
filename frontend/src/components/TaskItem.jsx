@@ -6,6 +6,19 @@ const TaskItem = ({ task }) => {
     const [editTitle, setEditTitle] = useState(task.title);
     const [editDescription, setEditDescription] = useState(task.description);
 
+    const handleDelete = async () => {
+        const confirmed = window.confirm("Are you sure you want to delete this task?");
+        if(confirmed) {
+            try {
+                await deleteTask(task._id);
+                window.location.reload();
+            }
+            catch (error) {
+                console.error("Error deleting task: " + error?.message);
+            }
+        }
+    };
+
     return (
         <div className="bg-white shadow-md rounded-lg p-5 hover:shadow-lg transition-shadow duration-300">
             {isEditing ? (

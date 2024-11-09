@@ -19,6 +19,10 @@ const TaskItem = ({ task }) => {
         }
     };
 
+    const handleEdit = async () => {
+        setIsEditing(true); // Switch to editing mode
+    };
+
     return (
         <div className="bg-white shadow-md rounded-lg p-5 hover:shadow-lg transition-shadow duration-300">
             {isEditing ? (

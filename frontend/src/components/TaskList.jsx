@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from 'react';
+import { fetchTasks, deleteTask } from '../api';
+import TaskItem from './TaskItem';
 
 const TaskList = () => {
-    return <h1>Task List</h1>
+    return (
+        <div className="space-y-4">
+        </div>
+    );
 };
 
 export default TaskList;

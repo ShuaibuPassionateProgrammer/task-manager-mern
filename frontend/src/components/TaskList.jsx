@@ -3,8 +3,26 @@ import { fetchTasks, deleteTask } from '../api';
 import TaskItem from './TaskItem';
 
 const TaskList = () => {
+    const [tasks, setTasks] = useState([]);
+
+    useEffect(() => {
+        const getTasks = async () => {
+            const tasksFromServer = await fetchTasks();
+            setTasks(tasksFromServer);
+        };
+
+        getTasks();
+    }, []);
+
     return (
         <div className="space-y-4">
+            {task.length === 0 ? (
+                <p className="text-gray-500 text-center">No tasks available</p>
+            ) : (
+                task.map(task => {
+                    <TaskItem key={task._id} task={task} onDelete={handleDelete} />
+                })
+            )}
         </div>
     );
 };

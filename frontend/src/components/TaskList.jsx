@@ -14,6 +14,11 @@ const TaskList = () => {
         getTasks();
     }, []);
 
+    const handleDelete = async (id) => {
+        await deleteTask(id);
+        setTasks(tasks.filter(task => task._id !== id));
+    };
+
     return (
         <div className="space-y-4">
             {tasks.length === 0 ? (
